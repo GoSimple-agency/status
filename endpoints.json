@@ -1,0 +1,5 @@
+[
+  { "slug": "website", "name": "Website", "url": "https://tezgafiskal.com/" },
+  { "slug": "developer-docs", "name": "Developer docs", "url": "https://tezgafiskal.com/en/fiscalization-api" },
+  { "slug": "openapi", "name": "OpenAPI spec", "url": "https://tezgafiskal.com/api/openapi.json" }
+]

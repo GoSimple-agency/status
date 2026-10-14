@@ -1,0 +1,36 @@
+name: Status
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - endpoints.json
+      - scripts/**
+      - .github/workflows/status.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: status
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: node scripts/check.mjs
+      - name: Commit the result
+        run: |
+          git config user.name "GoSimple status bot"
+          git config user.email "info@gosimple.agency"
+          git add -A
+          git diff --quiet --cached || git commit -m "status update [skip ci]"
+          git push
