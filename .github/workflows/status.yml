@@ -32,5 +32,8 @@ jobs:
           git config user.name "GoSimple status bot"
           git config user.email "info@gosimple.agency"
           git add -A
-          git diff --quiet --cached || git commit -m "status update [skip ci]"
+          if git diff --quiet --cached; then echo "No change"; exit 0; fi
+          git commit -m "status update [skip ci]"
+          # Integrate any concurrent run's commit before pushing.
+          git pull --rebase --autostash origin main
           git push
