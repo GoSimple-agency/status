@@ -6,10 +6,10 @@ Automated checks of the public Tezga endpoints. Updated every 30 minutes.
 
 | Endpoint | Status | Code | Response | Uptime |
 | --- | --- | --- | --- | --- |
-| 🟢 Website | Operational | 200 | 2432 ms | 100.00% |
-| 🟢 Developer docs | Operational | 200 | 431 ms | 100.00% |
-| 🟢 OpenAPI spec | Operational | 200 | 437 ms | 100.00% |
+| 🟢 Website | Operational | 200 | 2472 ms | 100.00% |
+| 🟢 Developer docs | Operational | 200 | 2343 ms | 100.00% |
+| 🟢 OpenAPI spec | Operational | 200 | 252 ms | 100.00% |
 
-Last checked: 2026-11-09T02:49:03.164Z
+Last checked: 2026-11-09T10:37:50.506Z
 
 Live page: https://gosimple-agency.github.io/status/
